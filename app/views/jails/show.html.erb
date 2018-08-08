@@ -1,0 +1,30 @@
+<!-- <p id="notice"><%#= notice %></p>
+
+<p> -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= @jail.banner_url %>);height:100vh;background-position:center;">
+  <div class="banner-content">
+    <h1><%= @jail.name %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @jail.killers.each do |killer| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= killer.image_url %>);">
+          <div class="card-description">
+            <h2><%= killer.name %></h2>
+          </div>
+          <%= link_to killer_path(killer), method: :delete do %>
+            "X"
+          <% end %>
+          <!-- <a class="card-link" href="#" ></a> -->
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to 'Edit', edit_jail_path(@jail) %> |
+<%= link_to 'Back', jails_path %>
