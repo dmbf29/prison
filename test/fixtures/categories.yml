@@ -1,10 +1,9 @@
 # == Schema Information
 #
-# Table name: jails
+# Table name: categories
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  banner_url :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -13,8 +12,6 @@
 
 one:
   name: MyString
-  banner_url: MyString
 
 two:
   name: MyString
-  banner_url: MyString

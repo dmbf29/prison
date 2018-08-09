@@ -8,6 +8,7 @@ class JailsController < ApplicationController
 
   # GET /jails/1
   def show
+    @killer = Killer.new
   end
 
   # GET /jails/new

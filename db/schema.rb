@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_083409) do
+ActiveRecord::Schema.define(version: 2018_08_09_084928) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jails", force: :cascade do |t|
     t.string "name"
     t.string "banner_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "killer_categories", force: :cascade do |t|
+    t.integer "killer_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_killer_categories_on_category_id"
+    t.index ["killer_id"], name: "index_killer_categories_on_killer_id"
   end
 
   create_table "killers", force: :cascade do |t|

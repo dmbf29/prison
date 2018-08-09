@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h4>Add a category  for <%= @killer.name %></h4>
+      <%= image_tag @killer.image_url, width: "200px" %>
+      <%= simple_form_for [@killer, @killer_category] do |f| %>
+        <%= f.association :category %>
+        <%= f.submit "Add", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>

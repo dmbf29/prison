@@ -1,17 +1,16 @@
 # == Schema Information
 #
-# Table name: jails
+# Table name: categories
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  banner_url :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class JailTest < ActiveSupport::TestCase
+class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
